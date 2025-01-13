@@ -1,0 +1,34 @@
+[
+  {
+    "service_name": "Employee Onboarding",
+    "description": "Streamline the process of hiring new employees with automated workflows for document submission and profile creation."
+  },
+  {
+    "service_name": "Time Tracking & Attendance",
+    "description": "Track employee working hours, overtime, and attendance records with a digital clock-in and clock-out system."
+  },
+  {
+    "service_name": "Payroll Management",
+    "description": "Automate salary calculations, tax deductions, and payslip generation while ensuring compliance with tax laws."
+  },
+  {
+    "service_name": "Leave Management",
+    "description": "Allow employees to request leaves, view balances, and automate approval workflows for HR."
+  },
+  {
+    "service_name": "Performance Management",
+    "description": "Set goals, track employee performance, and conduct 360-degree feedback for continuous improvement."
+  },
+  {
+    "service_name": "Document Management",
+    "description": "Securely store and manage employee contracts, certificates, and important documents with version control."
+  },
+  {
+    "service_name": "Communication & Collaboration",
+    "description": "Facilitate internal communication with announcement boards, messaging systems, and team collaboration tools."
+  },
+  {
+    "service_name": "HR Analytics & Reporting",
+    "description": "Generate detailed reports on workforce productivity, attendance trends, and payroll summaries."
+  }
+]
