@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../pages/shared/Navbar";
-import Footer from "../pages/shared/Footer";
+import FooterSec from "../pages/shared/FooterSec";
 
 const MainLayout = () => {
   return (
@@ -11,7 +11,7 @@ const MainLayout = () => {
       <section className="min-h-[calc(100vh-150px)]">
         <Outlet></Outlet>
       </section>
-      <Footer></Footer>
+      <FooterSec></FooterSec>
     </div>
   );
 };

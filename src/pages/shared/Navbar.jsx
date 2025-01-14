@@ -1,5 +1,5 @@
 import useAuth from "../../hooks/useAuth";
-import { Dropdown, Navbar as Nav } from "flowbite-react";
+import { Navbar as Nav } from "flowbite-react";
 import logoIcon from "../../assets/images/logoIcon.png";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
