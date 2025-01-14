@@ -9,7 +9,7 @@ import {
 import logoIcon from "../../assets/images/logoIcon.png";
 const FooterSec = () => {
   return (
-    <Footer container className="bg-primaryColor mt-20">
+    <Footer container className="bg-primaryColor lg:mt-10 mt-20">
       <div className="w-full ">
         <div className="flex flex-col items-center justify-center gap-3 mb-10">
           <div className="flex justify-center items-center gap-1">
