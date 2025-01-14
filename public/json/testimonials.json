@@ -1,0 +1,37 @@
+[
+  {
+    "name": "John Doe",
+    "cus_img": "https://i.ibb.co.com/Hpd3Qwz/man-7450033-960-720.png",
+    "position": "Software Engineer",
+    "company": "Acme Corp",
+    "testimonial": "This platform has streamlined our employee management process like never before! Highly recommended."
+  },
+  {
+    "name": "Jane Smith",
+    "cus_img": "https://i.ibb.co.com/tXCV3TR/emp1.png",
+    "position": "HR Manager",
+    "company": "Tech Innovations",
+    "testimonial": "A game-changer for payroll management! Our team has saved countless hours using this system."
+  },
+  {
+    "name": "Alice Johnson",
+    "cus_img": "https://i.ibb.co.com/J2t0m9C/pexels-edmond-dantes-4342352.png",
+    "position": "Project Manager",
+    "company": "NextGen Solutions",
+    "testimonial": "The workforce management tools have greatly improved our productivity and collaboration."
+  },
+  {
+    "name": "Robert Brown",
+    "cus_img": "https://i.ibb.co.com/HhS6NSb/corporate-testimonial-videos.png",
+    "position": "CEO",
+    "company": "Startup XYZ",
+    "testimonial": "Incredible support and powerful features! This platform has transformed our HR operations."
+  },
+  {
+    "name": "Emily White",
+    "cus_img": "https://i.ibb.co.com/kyWZrjz/pexels-olly-3769021.png",
+    "position": "Operations Director",
+    "company": "Global Ventures",
+    "testimonial": "Simplifies employee data management with an intuitive interface and reliable reporting features."
+  }
+]
