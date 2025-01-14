@@ -15,7 +15,7 @@ const Testimonial = () => {
         title="Testimonials"
         subHeading={"Listen From The Very Best. Clients Love What We Provide."}
       ></SectionTitle>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[70px]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[70px]">
         {testimonials.slice(0, 3).map((item, idx) => (
           <TestimonialCard key={idx} item={item}></TestimonialCard>
         ))}

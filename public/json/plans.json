@@ -1,0 +1,26 @@
+[
+  {
+    "plan_name": "Basic",
+    "plan_img": "https://i.ibb.co.com/zfHSqhd/basicplan.png",
+    "price": "$29/month",
+    "services_included": "Employee Management, Leave Management & Basic Reporting"
+  },
+  {
+    "plan_name": "Standard",
+    "plan_img": "https://i.ibb.co.com/3WMMntb/standardplan.png",
+    "price": "$59/month",
+    "services_included": "Employee Management, Leave Management, Payroll Management"
+  },
+  {
+    "plan_name": "Premium",
+    "plan_img": "https://i.ibb.co.com/Tgrgm5Y/premiumplan.png",
+    "price": "$99/month",
+    "services_included": "Management of Employee, Leave, Payroll & Performance is included."
+  },
+  {
+    "plan_name": "Enterprise",
+    "plan_img": "https://i.ibb.co.com/r3V61w1/industryplan.png",
+    "price": "Custom Pricing",
+    "services_included": "All Services, Priority Support, Dedicated Account Manager. All in One"
+  }
+]

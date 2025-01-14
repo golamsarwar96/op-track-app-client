@@ -4,7 +4,7 @@ import { ImQuotesRight } from "react-icons/im";
 const TestimonialCard = ({ item }) => {
   const { name, cus_img, company, position, testimonial } = item || {};
   return (
-    <Card className="max-w-sm mx-auto bg-primaryColor/90 text-white">
+    <Card className="lg:max-w-sm md:w-[90%] w-[90%] mx-auto bg-primaryColor/90 text-white">
       <div className="flex flex-col items-center pb-10 font-bold">
         <img
           alt="Bonnie image"

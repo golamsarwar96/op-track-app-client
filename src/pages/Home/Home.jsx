@@ -1,4 +1,5 @@
 import Banner from "../Home/Banner";
+import PricePlans from "./PricePlans";
 import Services from "./Services";
 import Testimonial from "./Testimonial";
 const Home = () => {
@@ -12,6 +13,9 @@ const Home = () => {
       </section>
       <section>
         <Testimonial></Testimonial>
+      </section>
+      <section>
+        <PricePlans></PricePlans>
       </section>
     </div>
   );
