@@ -52,7 +52,7 @@ const Navbar = () => {
           <Nav.Toggle />
         </div>
         <Nav.Collapse className="">
-          <div className="lg:space-x-8 md:space-x-5 space-y-3 md:block flex flex-col md:flex-row items-start justify-center font-semibold">
+          <div className="lg:space-x-8 md:space-x-5 space-y-3 md:block flex flex-col md:flex-row items-start justify-center font-semibold lg:mr-28 md:mr-20">
             <NavLink
               className={({ isActive }) =>
                 isActive
