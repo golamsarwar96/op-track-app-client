@@ -4,7 +4,7 @@ import Footer from "../pages/shared/Footer";
 
 const MainLayout = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto font-sand">
+    <div className="max-w-screen-2xl mx-auto font-sand bg-bgColor">
       <section>
         <Navbar></Navbar>
       </section>

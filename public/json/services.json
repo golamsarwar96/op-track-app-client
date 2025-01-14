@@ -1,34 +1,42 @@
 [
   {
+    "image": "https://i.ibb.co.com/jbzjJ7c/services1.png",
     "service_name": "Employee Onboarding",
     "description": "Streamline the process of hiring new employees with automated workflows for document submission and profile creation."
   },
   {
+    "image": "https://i.ibb.co.com/F5HWrZ7/services2.png",
     "service_name": "Time Tracking & Attendance",
     "description": "Track employee working hours, overtime, and attendance records with a digital clock-in and clock-out system."
   },
   {
-    "service_name": "Payroll Management",
-    "description": "Automate salary calculations, tax deductions, and payslip generation while ensuring compliance with tax laws."
-  },
-  {
-    "service_name": "Leave Management",
-    "description": "Allow employees to request leaves, view balances, and automate approval workflows for HR."
-  },
-  {
+    "image": "https://i.ibb.co.com/4sYs0mV/services3.png",
     "service_name": "Performance Management",
     "description": "Set goals, track employee performance, and conduct 360-degree feedback for continuous improvement."
   },
   {
-    "service_name": "Document Management",
-    "description": "Securely store and manage employee contracts, certificates, and important documents with version control."
-  },
-  {
-    "service_name": "Communication & Collaboration",
-    "description": "Facilitate internal communication with announcement boards, messaging systems, and team collaboration tools."
-  },
-  {
+    "image": "https://i.ibb.co.com/86ZjgJR/services4.png",
     "service_name": "HR Analytics & Reporting",
     "description": "Generate detailed reports on workforce productivity, attendance trends, and payroll summaries."
+  },
+  {
+    "image": "https://i.ibb.co.com/BjmwTGX/services5.png",
+    "service_name": "Employee Management",
+    "description": "Manage employee data, role assignments, and personal information updates with streamlined processes."
+  },
+  {
+    "image": "https://i.ibb.co.com/PTmvpXq/services6.png",
+    "service_name": "Global Payroll System",
+    "description": "Handle multi-currency salary payments, ensure tax compliance across regions, and automate payslip generation."
+  },
+  {
+    "image": "https://i.ibb.co.com/q00nD7X/services7.png",
+    "service_name": "Workforce Management",
+    "description": "Oversee employee scheduling, task assignments, and workload balancing to maximize productivity."
+  },
+  {
+    "image": "https://i.ibb.co.com/YySGFQh/services8.png",
+    "service_name": "Human Resource Management",
+    "description": "Manage recruitment, benefits administration, policy enforcement, and employee relations for a healthier work environment."
   }
 ]

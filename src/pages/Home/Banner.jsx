@@ -32,7 +32,7 @@ const Banner = () => {
             src={banner1}
             alt="Image 1"
           />
-          <h1 className="font-semibold lg:text-3xl md:text-xl text-bases absolute lg:w-[45%] md:w-[65%]  mx-auto lg:left-[440px] md:left-36 left-2  md:top-16 top-16 lg:top-[150px] text-center bg-primaryColor text-white p-8">
+          <h1 className="font-semibold lg:text-3xl md:text-xl text-bases absolute lg:w-[50%] md:w-[65%]  mx-auto lg:left-[405px] md:left-36 left-2  md:top-16 top-16 lg:top-[150px] text-center bg-primaryColor text-white p-8">
             Simplify{" "}
             <span className="bg-darkMode p-2 font-bold">Workflows</span>.
             Amplify{" "}
