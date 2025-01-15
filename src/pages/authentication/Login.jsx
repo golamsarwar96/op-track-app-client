@@ -1,8 +1,11 @@
 import { Button, Dropdown, Label, TextInput } from "flowbite-react";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Lottie from "lottie-react";
+import signInLottie from "../../assets/lottie/signinLottie.json";
+import { FaGoogle } from "react-icons/fa";
 const Login = () => {
   const { userSignIn, googleSignIn } = useAuth();
   const location = useLocation();
@@ -61,45 +64,72 @@ const Login = () => {
     }
   };
   return (
-    <div>
-      {" "}
-      <div className="max-w-screen-2xl mx-auto min-h-screen bg-gray-200">
-        <div></div>
-        <div>
+    <div className="bg-gray-200">
+      <div className="max-w-screen-2xl mx-auto min-h-screen flex-col lg:flex-row flex items-center justify-center gap-10 ">
+        <div className="lg:order-0 order-1">
+          <Lottie
+            animationData={signInLottie}
+            className="lg:w-[600px] w-[400px]"
+          ></Lottie>
+        </div>
+        <div className="lg:w-[35%]">
+          <h1 className="text-center md:text-5xl text-4xl font-bold font-sand mb-10 mt-10 lg:mt-0">
+            Welcome Back To
+            <h2 className="md:mt-1 self-center whitespace-nowrap text-primaryColor font-extrabold dark:text-white">
+              Op<span className="text-darkMode">Track</span>
+            </h2>
+          </h1>
           <form
             onSubmit={handleSignIn}
-            className="flex max-w-md flex-col gap-4"
+            className=" bg-primaryColor/70 rounded-3xl w-full p-5"
           >
-            <button
-              onClick={handleGoogleSignIn}
-              className="btn bg-primaryColor text-darkMode"
-            >
-              Google sign in
-            </button>
-            <div>
-              <div className="mb-2 block">
-                <Label value="Your email" />
-              </div>
-              <TextInput
-                type="email"
-                name="email"
-                placeholder="name@optrack.com"
-                required
-              />
+            <div className="flex items-center gap-3 justify-center">
+              <Link to="/register">
+                <button className="btn bg-primaryColor text-white font-semibold px-5 py-3 rounded-3xl">
+                  Register
+                </button>
+              </Link>
+              <button
+                onClick={handleGoogleSignIn}
+                className="btn bg-primaryColor text-white font-semibold flex justify-center items-center gap-2 px-5 py-3 rounded-3xl"
+              >
+                <FaGoogle className="text-white"></FaGoogle>Google Sign In
+              </button>
             </div>
-            <div className="-mb-2 block">
-              <Label value="Your password" />
-            </div>
-            <TextInput
-              name="password"
-              placeholder="Your Password"
-              type="password"
-              required
-            />
+            <h1 className="text-center font-bold text-white mt-4">
+              Sign In With Google or
+            </h1>
+            <div className="divider"></div>
 
-            <Button className="bg-primaryColor" type="submit">
-              Submit
-            </Button>
+            <div className="space-y-3">
+              <div className="">
+                <div className="block mb-1">
+                  <Label className="text-white" value="Your email" />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="name@optrack.com"
+                  className="w-full rounded-lg"
+                  required
+                />
+              </div>
+              <div>
+                <div className=" block mb-1">
+                  <Label className="text-white" value="Your password" />
+                </div>
+                <input
+                  name="password"
+                  placeholder="Your Password"
+                  type="password"
+                  className="w-full rounded-lg"
+                  required
+                />
+              </div>
+              <Button className="bg-primaryColor w-full" type="submit">
+                Submit
+              </Button>
+            </div>
           </form>
         </div>
       </div>
