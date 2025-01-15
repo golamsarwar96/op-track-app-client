@@ -19,9 +19,6 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         sand: ["Quicksand", "serif"],
       },
-      backgroundImage: {
-        contact: "url('/src/assets/images/bgContact.png')",
-      },
     },
   },
   plugins: [flowbite.plugin()],

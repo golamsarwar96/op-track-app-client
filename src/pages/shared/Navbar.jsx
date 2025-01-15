@@ -10,7 +10,7 @@ const Navbar = () => {
     console.log(visible);
   };
   const { userGreet } = useAuth();
-  const user = "sarwar";
+  const user = false;
   return (
     <div className="">
       <Nav fluid className="bg-primaryColor">
@@ -36,13 +36,13 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            <div>
+            <div className="flex gap-3">
               <Link to="/login">
                 <button className="bg-darkMode text-white hover:bg-white hover:text-primaryColor md:px-4 md:py-2 px-2 py-1 rounded-3xl">
                   Login
                 </button>
               </Link>
-              <Link>
+              <Link to="/register">
                 <button className="bg-darkMode text-white hover:bg-white hover:text-primaryColor md:px-4 md:py-2 px-2 py-1 rounded-3xl">
                   Sign Up
                 </button>
@@ -51,8 +51,9 @@ const Navbar = () => {
           )}
           <Nav.Toggle />
         </div>
+        {/* lg:mr-28 md:mr-20 */}
         <Nav.Collapse className="">
-          <div className="lg:space-x-8 md:space-x-5 space-y-3 md:block flex flex-col md:flex-row items-start justify-center font-semibold lg:mr-28 md:mr-20">
+          <div className="lg:space-x-8 md:space-x-5 space-y-3 md:block flex flex-col md:flex-row items-start justify-center font-semibold ">
             <NavLink
               className={({ isActive }) =>
                 isActive
