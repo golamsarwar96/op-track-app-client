@@ -9,6 +9,7 @@ import { HiMail } from "react-icons/hi";
 import { BiHome, BiSend } from "react-icons/bi";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -43,6 +44,9 @@ const Contact = () => {
   };
   return (
     <div className="font-sand bg-gray-100 min-h-screen max-w-screen-2xl mx-auto">
+      <Helmet>
+        <title>OpTrack | Contact Us</title>
+      </Helmet>
       <div className="relative">
         <img src={bgContact} className="h-[20vh] w-full object-cover" alt="" />
         <h1 className="absolute top-0 right-0 lg:mt-10 md:mt-7 md:text-5xl md:mr-16 mr-7 mt-8 lg:text-6xl text-3xl text-white font-semibold">
