@@ -9,7 +9,7 @@ const Navbar = () => {
     setVisible(!visible);
     console.log(visible);
   };
-  const { userGreet } = useAuth();
+
   const user = false;
   return (
     <div className="">

@@ -38,23 +38,37 @@ const Register = () => {
     );
 
     const img_URL = data.data.display_url;
-    const userInfo = {
-      name,
-      email,
-      password,
-      bank_account_no,
-      salary,
-      designation,
-      role,
-    };
-
-    console.log(userInfo);
 
     try {
       const result = await createUser(email, password);
       console.log(result);
+      const userInfo = {
+        name,
+        email,
+        password,
+        bank_account_no,
+        salary,
+        designation,
+        role,
+        img_URL,
+        isVerified,
+      };
+      const dbsave = await axios.post(
+        `${import.meta.env.VITE_API_URL}/users`,
+        userInfo
+      );
 
-      await updateUserProfile(name, img_URL);
+      console.log(dbsave);
+
+      await updateUserProfile(
+        name,
+        img_URL,
+        bank_account_no,
+        salary,
+        designation,
+        isVerified,
+        role
+      );
 
       navigate("/");
       toast.success("SignUp Successful");
