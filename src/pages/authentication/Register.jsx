@@ -16,6 +16,7 @@ const Register = () => {
     console.log(value);
   };
   const navigate = useNavigate();
+
   const handleForm = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -31,6 +32,15 @@ const Register = () => {
     const formData = new FormData();
     formData.append("image", image);
 
+    //Password Validation
+    // const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
+    // if (!regex.test(password)) {
+    //   toast.error(
+    //     "The password must be 6 characters & should contain at least one uppercase letter and one lowercase letter."
+    //   );
+    //   return;
+    // }
+
     //Send Image Data to imgbb
     const { data } = await axios.post(
       `https://api.imgbb.com/1/upload?key=${
@@ -38,7 +48,6 @@ const Register = () => {
       }`,
       formData
     );
-
     const img_URL = data.data.display_url;
 
     try {
@@ -60,17 +69,7 @@ const Register = () => {
         userInfo
       );
 
-      console.log(dbsave);
-
-      await updateUserProfile(
-        name,
-        img_URL,
-        bank_account_no,
-        salary,
-        designation,
-        isVerified,
-        role
-      );
+      await updateUserProfile(name, img_URL);
 
       navigate("/");
       toast.success("SignUp Successful");
@@ -85,22 +84,6 @@ const Register = () => {
       console.log(result);
       const user = result.user;
       console.log(user);
-
-      // const userRef = doc(db, "users", users.uid);
-      // await setDoc(
-      //   userRef,
-      //   {
-      //     bank_acc_no: user.bank_acc_no,
-      //     salary: user.salary,
-      //     designation: user.designation,
-      //     role: result.role,
-      //     isVerified: result.isVerified,
-      //     name: result.user.name,
-      //     email: result.user.email,
-      //     img_URL: result.user.photoURL,
-      //   },
-      //   { merge: true }
-      // );
 
       await axios.post(`${import.meta.env.VITE_API_URL}/users`, {
         name: result.user?.displayName,

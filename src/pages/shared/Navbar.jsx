@@ -4,13 +4,13 @@ import logoIcon from "../../assets/images/logoIcon.png";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 const Navbar = () => {
+  const { user, logOut } = useAuth();
   const [visible, setVisible] = useState(false);
   const toggleDropdown = () => {
     setVisible(!visible);
     console.log(visible);
   };
 
-  const user = false;
   return (
     <div className="">
       <Nav fluid className="bg-primaryColor">
@@ -21,17 +21,20 @@ const Navbar = () => {
           <img className="md:w-10 md:h-10 w-9 h-9" src={logoIcon} />
         </div>
         <div className="flex md:order-2 lg:mr-7 mr-2 gap-2 font-semibold items-center justify-center">
-          {user ? (
+          {user && user?.email ? (
             <div className="relative inline-block">
               <img
-                src={logoIcon}
+                src={user?.photoURL}
+                title={user?.displayName}
                 onClick={toggleDropdown}
                 className="w-10 h-10 cursor-pointer rounded-full"
                 alt=""
               />
               {visible && (
-                <div className="absolute -right-5 top-[42px] bg-darkMode mt-2 w-20 px-4 py-2 text-center ">
-                  <button className="block">Logout</button>
+                <div className="absolute -right-3 top-[42px] bg-darkMode mt-2 w-20 px-4 py-2 text-center z-10">
+                  <button onClick={logOut} className="block">
+                    Logout
+                  </button>
                 </div>
               )}
             </div>
@@ -43,7 +46,7 @@ const Navbar = () => {
                 </button>
               </Link>
               <Link to="/register">
-                <button className="bg-darkMode text-white hover:bg-white hover:text-primaryColor md:px-4 md:py-2 px-2 py-1 rounded-3xl">
+                <button className="bg-darkMode text-white hover:bg-white hover:text-primaryColor md:px-4 md:py-1 px-2 py-1 rounded-3xl">
                   Sign Up
                 </button>
               </Link>

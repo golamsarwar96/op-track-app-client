@@ -6,8 +6,9 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { Label, Textarea } from "flowbite-react";
 import { HiMail } from "react-icons/hi";
-import { BiSend } from "react-icons/bi";
+import { BiHome, BiSend } from "react-icons/bi";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const [email, setEmail] = useState("");
@@ -47,6 +48,9 @@ const Contact = () => {
         <h1 className="absolute top-0 right-0 lg:mt-10 md:mt-7 md:text-5xl md:mr-16 mr-7 mt-8 lg:text-6xl text-3xl text-white font-semibold">
           Get in Touch with Us
         </h1>
+        {/* <Link to="/">
+          <BiHome className="ml-8 mt-3 text-3xl bg-primaryColor text-white rounded-full p-1"></BiHome>
+        </Link> */}
         <Lottie
           animationData={contactLottie}
           loop={true}

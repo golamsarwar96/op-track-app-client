@@ -12,8 +12,8 @@ const FooterSec = () => {
     <Footer container className="bg-primaryColor lg:mt-10 mt-20">
       <div className="w-full ">
         <div className="flex flex-col items-center justify-center gap-3 mb-10">
-          <div className="flex justify-center items-center gap-1">
-            <h2 className="self-center whitespace-nowrap md:text-3xl text-2xl text-white font-extrabold dark:text-white">
+          <div className="flex justify-center items-center gap-1 mb-2">
+            <h2 className="self-center whitespace-nowrap md:text-4xl text-2xl text-white font-extrabold dark:text-white">
               Op<span className="text-darkMode">Track</span>
             </h2>
             <img className="md:w-10 md:h-10 w-9 h-9" src={logoIcon} />
