@@ -5,25 +5,26 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { Table } from "flowbite-react";
-import { MdOutlineEditNote } from "react-icons/md";
 import { AiOutlineDelete } from "react-icons/ai";
 import useAuth from "../../../../hooks/useAuth";
+import { FaEdit } from "react-icons/fa";
+import toast from "react-hot-toast";
+import { useQuery } from "@tanstack/react-query";
 
 const WorkSheet = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const [tasks, setTasks] = useState("");
   const [startDate, setStartDate] = useState(new Date());
-  const [workSheets, setWorkSheets] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
-  //Fetching worksheet data
-  useEffect(() => {
-    fetchWorkSheet();
-  }, []);
-  const fetchWorkSheet = async () => {
-    const { data } = await axiosSecure.get(`/work-sheet/${user?.email}`);
-    setWorkSheets(data);
-  };
+  const { data: workSheet = [], refetch } = useQuery({
+    queryKey: ["workSheet"],
+    queryFn: async () => {
+      const { data } = await axiosSecure.get(`/work-sheet/${user?.email}`);
+      return data;
+    },
+  });
 
   //task onClick handler
   const handleTask = (value) => {
@@ -32,7 +33,7 @@ const WorkSheet = () => {
   };
 
   //Work sheet form
-  const handleWorkSheet = (e) => {
+  const handleWorkSheet = async (e) => {
     e.preventDefault();
     const form = e.target;
     const task = tasks;
@@ -54,16 +55,16 @@ const WorkSheet = () => {
     console.log(workSheetInfo);
 
     //post request to db
-    const result = axiosSecure.post("/work-sheet", workSheetInfo);
-    console.log(result);
-
-    // refetching
-    fetchWorkSheet();
+    try {
+      await axiosSecure.post("/work-sheet", workSheetInfo);
+      toast.success("Task Added Successfully");
+      refetch();
+    } catch (err) {
+      toast.error("Failed to add Task");
+    }
   };
 
-  const handleUpdate = () => {
-    console.log("Updating");
-  };
+  // Open modal handler
 
   return (
     <div className="pr-10">
@@ -126,7 +127,7 @@ const WorkSheet = () => {
               <Table.HeadCell>Edit</Table.HeadCell>
             </Table.Head>
             <Table.Body className="divide-y">
-              {workSheets.map((workSheet) => (
+              {workSheet.map((workSheet) => (
                 <Table.Row
                   key={workSheet._id}
                   className="bg-white dark:border-gray-700 dark:bg-gray-800"
@@ -142,9 +143,7 @@ const WorkSheet = () => {
                     </button>
                   </Table.Cell>
                   <Table.Cell>
-                    <button onClick={handleUpdate}>
-                      <MdOutlineEditNote className="text-2xl" />
-                    </button>
+                    <p>Edit</p>
                   </Table.Cell>
                 </Table.Row>
               ))}

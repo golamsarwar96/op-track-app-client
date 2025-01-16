@@ -12,6 +12,7 @@ import EmployeeDetails from "../pages/dashboard/sidebar/hr/EmployeeDetails";
 import Progress from "../pages/dashboard/sidebar/hr/Progress";
 import AllEmployeeList from "../pages/dashboard/sidebar/Admin/AllEmployeeList";
 import Payroll from "../pages/dashboard/sidebar/Admin/Payroll";
+import PrivateRoute from "../routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "work-sheet",
-        element: <WorkSheet></WorkSheet>,
+        element: (
+          <PrivateRoute>
+            <WorkSheet></WorkSheet>
+          </PrivateRoute>
+        ),
       },
       {
         path: "payment-history",
