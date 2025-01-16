@@ -10,6 +10,7 @@ import useAuth from "../../../../hooks/useAuth";
 import { FaEdit } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { useQuery } from "@tanstack/react-query";
+import WorkSheetModal from "../../../../components/modal/workSheetModal";
 
 const WorkSheet = () => {
   const { user } = useAuth();
@@ -65,6 +66,10 @@ const WorkSheet = () => {
   };
 
   // Open modal handler
+  const openModal = () => setIsOpen(true);
+
+  // Close modal handler
+  const closeModal = () => setIsOpen(false);
 
   return (
     <div className="pr-10">
@@ -143,7 +148,10 @@ const WorkSheet = () => {
                     </button>
                   </Table.Cell>
                   <Table.Cell>
-                    <p>Edit</p>
+                    <WorkSheetModal
+                      workSheet={workSheet}
+                      refetch={refetch}
+                    ></WorkSheetModal>
                   </Table.Cell>
                 </Table.Row>
               ))}
