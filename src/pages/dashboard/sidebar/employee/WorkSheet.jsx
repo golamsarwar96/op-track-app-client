@@ -33,6 +33,12 @@ const WorkSheet = () => {
     console.log(value);
   };
 
+  // Open modal handler
+  const openModal = () => setIsOpen(true);
+
+  // Close modal handler
+  const closeModal = () => setIsOpen(false);
+
   //Work sheet form
   const handleWorkSheet = async (e) => {
     e.preventDefault();
@@ -65,11 +71,21 @@ const WorkSheet = () => {
     }
   };
 
-  // Open modal handler
-  const openModal = () => setIsOpen(true);
+  const handleDelete = async (_id) => {
+    try {
+      const response = await axiosSecure.delete(`/work-sheet/${_id}`);
 
-  // Close modal handler
-  const closeModal = () => setIsOpen(false);
+      if (response.data.deletedCount > 0) {
+        toast.success("Query deleted successfully!");
+        refetch(); // Ensure data updates dynamically after deletion
+      } else {
+        toast.error("Failed to delete the query.");
+      }
+    } catch (error) {
+      console.error("Error deleting query:", error);
+      toast.error("An error occurred while deleting the query.");
+    }
+  };
 
   return (
     <div className="pr-10">
@@ -143,7 +159,7 @@ const WorkSheet = () => {
                   <Table.Cell>{workSheet.hours_worked}</Table.Cell>
                   <Table.Cell>{workSheet.formattedDate}</Table.Cell>
                   <Table.Cell>
-                    <button>
+                    <button onClick={() => handleDelete(workSheet._id)}>
                       <AiOutlineDelete className="text-xl" />
                     </button>
                   </Table.Cell>

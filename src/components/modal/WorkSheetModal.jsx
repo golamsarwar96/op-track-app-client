@@ -48,7 +48,7 @@ const WorkSheetModal = ({ workSheet, refetch }) => {
       {/* Edit Button with Icon */}
       <button
         onClick={openModal}
-        className="p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 flex items-center"
+        className="p-3 bg-primaryColor text-white rounded-lg hover:bg-blue-600 flex items-center"
       >
         <FaEdit className="mr-2" /> Edit
       </button>
