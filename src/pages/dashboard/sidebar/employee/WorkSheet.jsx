@@ -36,11 +36,12 @@ const WorkSheet = () => {
     console.log(workSheet);
   };
   return (
-    <div className="p-10">
+    <div className="p-10 ">
       <h1 className="text-5xl text-center font-bold text-primaryColor">
         Work <span className="text-darkMode">Sheet</span>
       </h1>
-      <div className="mt-10 flex  gap-10">
+      {/* Task Menu */}
+      <div className="mt-10 flex justify-center  gap-10">
         <form
           onSubmit={handleWorkSheet}
           className="flex justify-center items-center gap-20"
@@ -83,6 +84,7 @@ const WorkSheet = () => {
           ></input>
         </form>
       </div>
+      <div></div>
     </div>
   );
 };

@@ -7,8 +7,10 @@ import { useState } from "react";
 import signInLottie from "../../assets/lottie/signinLottie.json";
 import Lottie from "lottie-react";
 import { FaGoogle } from "react-icons/fa";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const Register = () => {
+  const axiosSecure = useAxiosSecure();
   const { createUser, updateUserProfile, googleSignIn } = useAuth();
   const [roles, setRoles] = useState("");
   const handleRoles = (value) => {
@@ -64,11 +66,8 @@ const Register = () => {
         img_URL,
         isVerified,
       };
-      const dbsave = await axios.post(
-        `${import.meta.env.VITE_API_URL}/users`,
-        userInfo
-      );
-
+      // await axios.post(`${import.meta.env.VITE_API_URL}/users`, userInfo);
+      await axiosSecure.post("/users", userInfo);
       await updateUserProfile(name, img_URL);
 
       navigate("/");
