@@ -13,6 +13,7 @@ import Progress from "../pages/dashboard/sidebar/hr/Progress";
 import AllEmployeeList from "../pages/dashboard/sidebar/Admin/AllEmployeeList";
 import Payroll from "../pages/dashboard/sidebar/Admin/Payroll";
 import PrivateRoute from "../routes/PrivateRoute";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -63,7 +64,11 @@ const router = createBrowserRouter([
       },
       {
         path: "all-employee-list",
-        element: <AllEmployeeList></AllEmployeeList>,
+        element: (
+          <AdminRoute>
+            <AllEmployeeList></AllEmployeeList>
+          </AdminRoute>
+        ),
       },
       {
         path: "Payroll",
