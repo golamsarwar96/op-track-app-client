@@ -55,9 +55,10 @@ const router = createBrowserRouter([
         element: <EmployeeList></EmployeeList>,
       },
       {
-        path: "details/:email",
+        path: "details/:id",
         element: <EmployeeDetails></EmployeeDetails>,
       },
+
       {
         path: "progress",
         element: <Progress></Progress>,

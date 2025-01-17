@@ -1,25 +1,37 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure, { axiosSecure } from "../../../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { Table } from "flowbite-react";
 import { IoIosSearch } from "react-icons/io";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { RxCrossCircled } from "react-icons/rx";
+import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const EmployeeList = () => {
   const axiosSecure = useAxiosSecure();
-  const {
-    data: users = [],
-    isLoading,
-    error,
-  } = useQuery({
+
+  const { data: users = [], refetch } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
       const { data } = await axiosSecure("/users");
       return data;
     },
   });
+
+  const handleToggle = async (id, status) => {
+    try {
+      const updatedValue = { isVerified: !status };
+      console.log(updatedValue);
+      const { data } = await axiosSecure.patch(`/users/${id}`, updatedValue);
+      console.log(data);
+      refetch();
+      toast.success("User status updated successfully");
+    } catch (err) {
+      toast.error(err);
+    }
+  };
   return (
-    <div>
+    <div className="pr-10">
       <h1 className="text-5xl text-center font-bold text-primaryColor mt-10">
         Employee <span className="text-darkMode">List</span>
       </h1>
@@ -32,7 +44,7 @@ const EmployeeList = () => {
               <Table.HeadCell>Bank Account</Table.HeadCell>
               <Table.HeadCell>Salary</Table.HeadCell>
               <Table.HeadCell>Pay</Table.HeadCell>
-              <Table.HeadCell>Varified</Table.HeadCell>
+              <Table.HeadCell>Verified</Table.HeadCell>
               <Table.HeadCell>Action</Table.HeadCell>
             </Table.Head>
             <Table.Body className="divide-y">
@@ -49,18 +61,30 @@ const EmployeeList = () => {
                   <Table.Cell>{user?.salary}</Table.Cell>
                   <Table.Cell>{user?.salary}</Table.Cell>
                   <Table.Cell>
-                    {user?.isVerified ? (
-                      <div>
-                        <RiVerifiedBadgeFill className="text-2xl text-red-700" />
+                    {user?.isVerified === false ? (
+                      <div
+                        onClick={() =>
+                          handleToggle(user?._id, user?.isVerified)
+                        }
+                        className="cursor-pointer"
+                      >
+                        <RxCrossCircled className="text-2xl text-red-700" />
                       </div>
                     ) : (
-                      <div>
-                        <RxCrossCircled className="text-2xl text-green-700" />
+                      <div
+                        className="cursor-pointer"
+                        onClick={() =>
+                          handleToggle(user?._id, user?.isVerified)
+                        }
+                      >
+                        <RiVerifiedBadgeFill className="text-2xl text-green-700" />
                       </div>
                     )}
                   </Table.Cell>
                   <Table.Cell>
-                    <IoIosSearch className="text-2xl text-primaryColor" />
+                    <Link to={`/dashboard/details/${user._id}`}>
+                      <IoIosSearch className="text-2xl text-primaryColor" />
+                    </Link>
                   </Table.Cell>
                 </Table.Row>
               ))}
