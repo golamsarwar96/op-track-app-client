@@ -83,9 +83,15 @@ const EmployeeList = () => {
                     )}
                   </Table.Cell>
                   <Table.Cell>
-                    <button salary={user?.salary} disabled={!user.isVerified}>
+                    <button disabled={!user.isVerified}>
                       <Table.Cell>
-                        <PayButtonModal />
+                        <PayButtonModal
+                          salary={user?.salary}
+                          id={user?._id}
+                          email={user?.email}
+                          name={user?.name}
+                          image={user?.img_URL}
+                        />
                       </Table.Cell>
                     </button>
                   </Table.Cell>
