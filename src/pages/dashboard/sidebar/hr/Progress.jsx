@@ -2,8 +2,10 @@ import { useState } from "react";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { Table } from "flowbite-react";
+import useAuth from "../../../../hooks/useAuth";
 
 const Progress = () => {
+  const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const [selectedEmployee, setSelectedEmployee] = useState("");
   const [selectedMonth, setSelectedMonth] = useState("");
@@ -12,7 +14,7 @@ const Progress = () => {
   const { data: workSheet = [], refetch } = useQuery({
     queryKey: ["workSheet"],
     queryFn: async () => {
-      const { data } = await axiosSecure.get("/work-sheet");
+      const { data } = await axiosSecure.get(`/work-sheet/${user?.email}`);
       console.log(data);
       return data;
     },
@@ -48,7 +50,7 @@ const Progress = () => {
   }
 
   return (
-    <div>
+    <div className="pr-10">
       <h1 className="text-5xl text-center font-bold text-primaryColor mt-10">
         Prog<span className="text-darkMode">ress</span>
       </h1>
