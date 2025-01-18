@@ -31,6 +31,7 @@ const Register = () => {
     const designation = form.designation.value;
     const image = form.image.files[0];
     const isVerified = false;
+    const isFired = false;
     const formData = new FormData();
     formData.append("image", image);
 
@@ -65,6 +66,7 @@ const Register = () => {
         role,
         img_URL,
         isVerified,
+        isFired,
       };
       // await axios.post(`${import.meta.env.VITE_API_URL}/users`, userInfo);
       await axiosSecure.post("/users", userInfo);

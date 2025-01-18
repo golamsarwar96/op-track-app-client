@@ -14,7 +14,7 @@ const Progress = () => {
   const { data: workSheet = [], refetch } = useQuery({
     queryKey: ["workSheet"],
     queryFn: async () => {
-      const { data } = await axiosSecure.get(`/work-sheet/${user?.email}`);
+      const { data } = await axiosSecure.get(`/work-sheet`);
       console.log(data);
       return data;
     },
