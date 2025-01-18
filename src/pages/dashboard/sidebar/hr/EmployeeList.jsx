@@ -6,6 +6,7 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { RxCrossCircled } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import PayButtonModal from "../../../../components/modal/PayButtonModal";
 
 const EmployeeList = () => {
   const axiosSecure = useAxiosSecure();
@@ -59,7 +60,7 @@ const EmployeeList = () => {
                   <Table.Cell>{user?.email}</Table.Cell>
                   <Table.Cell>{user?.bank_account_no}</Table.Cell>
                   <Table.Cell>{user?.salary}</Table.Cell>
-                  <Table.Cell>{user?.salary}</Table.Cell>
+
                   <Table.Cell>
                     {user?.isVerified === false ? (
                       <div
@@ -80,6 +81,13 @@ const EmployeeList = () => {
                         <RiVerifiedBadgeFill className="text-2xl text-green-700" />
                       </div>
                     )}
+                  </Table.Cell>
+                  <Table.Cell>
+                    <button salary={user?.salary} disabled={!user.isVerified}>
+                      <Table.Cell>
+                        <PayButtonModal />
+                      </Table.Cell>
+                    </button>
                   </Table.Cell>
                   <Table.Cell>
                     <Link to={`/dashboard/details/${user._id}`}>

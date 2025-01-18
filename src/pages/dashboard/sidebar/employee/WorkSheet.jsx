@@ -1,5 +1,5 @@
 import { Dropdown } from "flowbite-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { format, parse } from "date-fns";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -7,7 +7,6 @@ import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import { Table } from "flowbite-react";
 import { AiOutlineDelete } from "react-icons/ai";
 import useAuth from "../../../../hooks/useAuth";
-import { FaEdit } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { useQuery } from "@tanstack/react-query";
 import WorkSheetModal from "../../../../components/modal/workSheetModal";
@@ -17,7 +16,6 @@ const WorkSheet = () => {
   const axiosSecure = useAxiosSecure();
   const [tasks, setTasks] = useState("");
   const [startDate, setStartDate] = useState(new Date());
-  const [isOpen, setIsOpen] = useState(false);
 
   const { data: workSheet = [], refetch } = useQuery({
     queryKey: ["workSheet"],
@@ -32,12 +30,6 @@ const WorkSheet = () => {
     setTasks(value);
     console.log(value);
   };
-
-  // Open modal handler
-  const openModal = () => setIsOpen(true);
-
-  // Close modal handler
-  const closeModal = () => setIsOpen(false);
 
   //Work sheet form
   const handleWorkSheet = async (e) => {
