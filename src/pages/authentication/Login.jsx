@@ -1,4 +1,4 @@
-import { Button, Dropdown, Label, TextInput } from "flowbite-react";
+import { Button, Label } from "flowbite-react";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -6,8 +6,10 @@ import axios from "axios";
 import Lottie from "lottie-react";
 import signInLottie from "../../assets/lottie/signinLottie.json";
 import { FaGoogle } from "react-icons/fa";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 const Login = () => {
-  const { userSignIn, googleSignIn } = useAuth();
+  const axiosSecure = useAxiosSecure();
+  const { user, userSignIn, googleSignIn } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state || "/";
@@ -20,6 +22,16 @@ const Login = () => {
     try {
       const result = await userSignIn(email, password);
       console.log(result);
+
+      const res = await axiosSecure.get(`/users/${email}`);
+      const fireUser = res.data;
+      console.log(fireUser.isFired);
+
+      if (fireUser.isFired) {
+        toast.error("Your account has been fired");
+        return;
+      }
+
       navigate(from, { replace: true });
       toast.success("Successfully Logged In");
     } catch (err) {
