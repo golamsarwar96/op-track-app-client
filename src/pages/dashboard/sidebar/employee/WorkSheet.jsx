@@ -50,6 +50,7 @@ const WorkSheet = () => {
       hours_worked,
       formattedDate,
       email: user?.email,
+      name: user?.displayName,
     };
     console.log(workSheetInfo);
 

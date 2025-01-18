@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
 const PayButtonModal = ({ salary, id, email, name, image }) => {
-  const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
   const [isOpen, setIsOpen] = useState(false);
   const [paymentReq, setPaymentReq] = useState({
@@ -35,8 +33,7 @@ const PayButtonModal = ({ salary, id, email, name, image }) => {
       const { data } = await axiosSecure.post("/payment-req", paymentReq);
       console.log(data);
       toast.success("Payment Request Sent To Admin");
-      // closeModal();
-      // navigate("/employee-list");
+      closeModal();
     } catch (err) {
       console.log(err);
     }
