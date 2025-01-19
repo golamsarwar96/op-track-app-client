@@ -41,14 +41,14 @@ const WorkSheet = () => {
     const date = startDate;
     const dateSeparated = date.toDateString();
     const parsedDate = parse(dateSeparated, "EEE MMM dd yyyy", new Date());
-    const formattedDate = format(parsedDate, "MM/dd/yy");
-    console.log(formattedDate);
+    const postedDate = format(parsedDate, "MM/dd/yy");
+    console.log(postedDate);
     const hours_worked = form.hours_worked.value;
 
     const workSheetInfo = {
       task,
       hours_worked,
-      formattedDate,
+      postedDate,
       email: user?.email,
       name: user?.displayName,
     };
@@ -150,7 +150,7 @@ const WorkSheet = () => {
                     {workSheet.task}
                   </Table.Cell>
                   <Table.Cell>{workSheet.hours_worked}</Table.Cell>
-                  <Table.Cell>{workSheet.formattedDate}</Table.Cell>
+                  <Table.Cell>{workSheet.postedDate}</Table.Cell>
                   <Table.Cell>
                     <button onClick={() => handleDelete(workSheet._id)}>
                       <AiOutlineDelete className="text-xl" />

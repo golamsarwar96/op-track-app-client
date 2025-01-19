@@ -3,7 +3,7 @@ import { FaEdit } from "react-icons/fa";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 
-const PayButtonModal = ({ salary, id, email, name, image }) => {
+const PayButtonModal = ({ salary, id, email, name, image, refetch }) => {
   const axiosSecure = useAxiosSecure();
   const [isOpen, setIsOpen] = useState(false);
   const [paymentReq, setPaymentReq] = useState({
@@ -13,7 +13,7 @@ const PayButtonModal = ({ salary, id, email, name, image }) => {
       image: image,
     },
     employeeId: id,
-    salary: salary,
+    salary: Number(salary),
     month: "",
     year: "",
   });
@@ -33,6 +33,7 @@ const PayButtonModal = ({ salary, id, email, name, image }) => {
       const { data } = await axiosSecure.post("/payment-req", paymentReq);
       console.log(data);
       toast.success("Payment Request Sent To Admin");
+      refetch();
       closeModal();
     } catch (err) {
       console.log(err);

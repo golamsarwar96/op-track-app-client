@@ -80,6 +80,7 @@ const AllEmployeeList = () => {
             <Table.Head>
               <Table.HeadCell>Employee Name</Table.HeadCell>
               <Table.HeadCell>Designation</Table.HeadCell>
+              <Table.HeadCell>Salary</Table.HeadCell>
               <Table.HeadCell>Change Salary</Table.HeadCell>
               <Table.HeadCell>Make HR</Table.HeadCell>
               <Table.HeadCell>Fire</Table.HeadCell>
@@ -95,6 +96,9 @@ const AllEmployeeList = () => {
                   </Table.Cell>
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     {employee?.designation}
+                  </Table.Cell>
+                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                    {employee?.salary}
                   </Table.Cell>
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     <AdjustSalary employee={employee}></AdjustSalary>

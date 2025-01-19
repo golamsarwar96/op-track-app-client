@@ -29,6 +29,7 @@ const AdjustSalary = ({ employee }) => {
       );
       console.log(data);
       toast.success("Salary Updated Successfully");
+      refetch();
     } catch (err) {
       console.log(err);
     }

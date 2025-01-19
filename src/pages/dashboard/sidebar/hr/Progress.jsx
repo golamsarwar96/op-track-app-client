@@ -27,7 +27,7 @@ const Progress = () => {
 
     const isMonth =
       selectedMonth === "" ||
-      workSheet.formattedDate.startsWith(selectedMonth + "/");
+      workSheet.postedDate.startsWith(selectedMonth + "/");
 
     return isEmployee && isMonth;
   });
@@ -43,7 +43,7 @@ const Progress = () => {
   // Unique months for dropdown
   const months = [];
   for (let i = 0; i < workSheet.length; i++) {
-    const month = workSheet[i].formattedDate.split("/")[0];
+    const month = workSheet[i].postedDate.split("/")[0];
     if (!months.includes(month)) {
       months.push(month);
     }
@@ -112,7 +112,7 @@ const Progress = () => {
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     {workSheet.task}
                   </Table.Cell>
-                  <Table.Cell>{workSheet.formattedDate}</Table.Cell>
+                  <Table.Cell>{workSheet.postedDate}</Table.Cell>
                 </Table.Row>
               ))}
             </Table.Body>

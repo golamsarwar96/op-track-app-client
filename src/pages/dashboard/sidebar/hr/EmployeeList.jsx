@@ -91,6 +91,7 @@ const EmployeeList = () => {
                           email={user?.email}
                           name={user?.name}
                           image={user?.img_URL}
+                          refetch={refetch}
                         />
                       </Table.Cell>
                     </button>
