@@ -61,7 +61,7 @@ const Register = () => {
         email,
         password,
         bank_account_no,
-        salary,
+        salary: Number(salary),
         designation,
         role,
         img_URL,

@@ -5,6 +5,7 @@ import { ImFire } from "react-icons/im";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
+import AdjustSalary from "../../../../components/modal/AdjustSalary";
 
 const AllEmployeeList = () => {
   const axiosSecure = useAxiosSecure();
@@ -19,7 +20,9 @@ const AllEmployeeList = () => {
   });
 
   //Only getting verified employees
-  const verifiedUsers = users.filter((user) => user.isVerified === true);
+  const verifiedUsers = Array.isArray(users)
+    ? users.filter((user) => user.isVerified === true)
+    : [];
   console.log(verifiedUsers);
 
   //Fire user functionality
@@ -40,12 +43,30 @@ const AllEmployeeList = () => {
           .put(`/users/${id}`, updatedData)
           .then(() => {
             Swal.fire("Fired!", "success");
+            refetch();
           })
           .catch((err) => {
             toast.error(err.message);
           });
       }
     });
+  };
+
+  //Handle change role
+  const handleRole = async (id, changeRoll) => {
+    try {
+      const updatedData = { role: "HR" };
+      console.log(updatedData);
+      const { data } = await axiosSecure.patch(
+        `/users/role/${id}`,
+        updatedData
+      );
+      console.log(data);
+      refetch();
+      return data;
+    } catch (err) {
+      toast.error(err.message);
+    }
   };
 
   return (
@@ -59,9 +80,9 @@ const AllEmployeeList = () => {
             <Table.Head>
               <Table.HeadCell>Employee Name</Table.HeadCell>
               <Table.HeadCell>Designation</Table.HeadCell>
+              <Table.HeadCell>Change Salary</Table.HeadCell>
               <Table.HeadCell>Make HR</Table.HeadCell>
               <Table.HeadCell>Fire</Table.HeadCell>
-              <Table.HeadCell>Pay</Table.HeadCell>
             </Table.Head>
             <Table.Body className="divide-y">
               {verifiedUsers.map((employee) => (
@@ -75,7 +96,26 @@ const AllEmployeeList = () => {
                   <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                     {employee?.designation}
                   </Table.Cell>
-                  <Table.Cell>Make HR</Table.Cell>
+                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                    <AdjustSalary employee={employee}></AdjustSalary>
+                  </Table.Cell>
+                  <Table.Cell>
+                    {employee?.role === "HR" ? (
+                      <div>
+                        <h1>HR</h1>
+                      </div>
+                    ) : (
+                      <div>
+                        <button
+                          onClick={() =>
+                            handleRole(employee?._id, employee?.role)
+                          }
+                        >
+                          Employee
+                        </button>
+                      </div>
+                    )}
+                  </Table.Cell>
                   <Table.Cell>
                     {employee?.isFired ? (
                       <span className="text-red-500 text-medium font-semibold">
@@ -87,7 +127,6 @@ const AllEmployeeList = () => {
                       </button>
                     )}
                   </Table.Cell>
-                  <Table.Cell>Pay</Table.Cell>
                 </Table.Row>
               ))}
             </Table.Body>

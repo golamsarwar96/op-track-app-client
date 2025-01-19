@@ -19,7 +19,7 @@ const EmployeeList = () => {
     },
   });
 
-  const handleToggle = async (id) => {
+  const handleToggle = async (id, status) => {
     try {
       const updatedValue = { isVerified: !status };
       console.log(updatedValue);

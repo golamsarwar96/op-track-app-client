@@ -9,7 +9,7 @@ import { FaGoogle } from "react-icons/fa";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 const Login = () => {
   const axiosSecure = useAxiosSecure();
-  const { user, userSignIn, googleSignIn } = useAuth();
+  const { userSignIn, googleSignIn } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   const from = location?.state || "/";
@@ -23,7 +23,8 @@ const Login = () => {
       const result = await userSignIn(email, password);
       console.log(result);
 
-      const res = await axiosSecure.get(`/users/${email}`);
+      //fetching a specific user to validate
+      const res = await axiosSecure.get(`/user/${email}`);
       const fireUser = res.data;
       console.log(fireUser.isFired);
 
@@ -150,4 +151,3 @@ const Login = () => {
 };
 
 export default Login;
-Login;
