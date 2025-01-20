@@ -1,14 +1,27 @@
 import { useParams } from "react-router-dom";
-import useAuth from "../../../../hooks/useAuth";
+import Chart from "../../../../components/Chart";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 
 const EmployeeDetails = () => {
-  const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
   const { id } = useParams();
+  const { data: details = [] } = useQuery({
+    queryKey: ["details", id],
+    queryFn: async () => {
+      const { data } = await axiosSecure.get(`payment/${id}`);
+      console.log(details);
+      return data;
+    },
+  });
   return (
     <div>
-      <h1>Employee Details : {id}</h1>
-      <h1>{user.displayName}</h1>
-      <img src={user?.photoURL} alt="" />
+      <div>
+        <h1>Employee Details : {id}</h1>
+      </div>
+      <div className="mt-20">
+        <Chart id={id}></Chart>
+      </div>
     </div>
   );
 };

@@ -101,6 +101,7 @@ const CheckoutForm = ({ setDate, date, employee, closeModal }) => {
         month: paymentIntent.created,
         date: date,
         email: employee?.employeeDetails?.email,
+        id: employee?.employeeId,
       };
       setDate("");
       console.log(payment);

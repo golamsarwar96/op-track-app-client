@@ -9,18 +9,34 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 import { GoogleAuthProvider } from "firebase/auth";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
+  const axiosSecure = useAxiosSecure();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       console.log("currentUser ===> ", currentUser);
-      setUser(currentUser);
+      if (currentUser?.email) {
+        setUser(currentUser);
+
+        //genarate jwt
+        const { data } = await axiosSecure.post(
+          "/jwt",
+          {
+            email: currentUser?.email,
+          },
+          {
+            withCredentials: true,
+          }
+        );
+        console.log(data);
+      }
       setLoading(false);
     });
     return () => {
@@ -39,6 +55,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const googleSignIn = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 
