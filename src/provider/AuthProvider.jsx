@@ -36,6 +36,12 @@ const AuthProvider = ({ children }) => {
           }
         );
         console.log(data);
+      } else {
+        setUser(currentUser);
+        const { data } = await axiosSecure.get("/logout", {
+          withCredentials: true,
+        });
+        console.log(data);
       }
       setLoading(false);
     });
