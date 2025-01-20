@@ -20,8 +20,10 @@ const Payroll = () => {
     console.log("clicked");
   };
   return (
-    <div>
-      {" "}
+    <div className="pr-10">
+      <h1 className="text-5xl text-center font-bold text-primaryColor mt-10">
+        Pay<span className="text-darkMode">roll</span>
+      </h1>
       <div className="mt-10">
         <div className="overflow-x-auto">
           <Table>
