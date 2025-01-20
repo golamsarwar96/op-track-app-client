@@ -9,13 +9,12 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 import { GoogleAuthProvider } from "firebase/auth";
-import useAxiosSecure from "../hooks/useAxiosSecure";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
-  const axiosSecure = useAxiosSecure();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -25,23 +24,19 @@ const AuthProvider = ({ children }) => {
       if (currentUser?.email) {
         setUser(currentUser);
 
-        //genarate jwt
-        const { data } = await axiosSecure.post(
-          "/jwt",
+        // Get JWT token
+        await axios.post(
+          `${import.meta.env.VITE_API_URL}/jwt`,
           {
             email: currentUser?.email,
           },
-          {
-            withCredentials: true,
-          }
+          { withCredentials: true }
         );
-        console.log(data);
       } else {
         setUser(currentUser);
-        const { data } = await axiosSecure.get("/logout", {
+        await axios.get(`${import.meta.env.VITE_API_URL}/logout`, {
           withCredentials: true,
         });
-        console.log(data);
       }
       setLoading(false);
     });
