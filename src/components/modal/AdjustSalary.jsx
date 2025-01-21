@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 const AdjustSalary = ({ employee, refetch }) => {
   const { _id, salary } = employee || {};
   const axiosSecure = useAxiosSecure();
-  const [isOpen, setIsOpen] = useState(false); // Modal visibility state
+  const [isOpen, setIsOpen] = useState(false);
 
   // Open modal handler
   const openModal = () => setIsOpen(true);

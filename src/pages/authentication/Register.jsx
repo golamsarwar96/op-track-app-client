@@ -68,8 +68,8 @@ const Register = () => {
         isVerified,
         isFired,
       };
-      // await axios.post(`${import.meta.env.VITE_API_URL}/users`, userInfo);
-      await axiosSecure.post("/users", userInfo);
+      await axios.post(`${import.meta.env.VITE_API_URL}/users`, userInfo);
+      // await axiosSecure.post("/users", userInfo);
       await updateUserProfile(name, img_URL);
 
       navigate("/");
@@ -151,7 +151,6 @@ const Register = () => {
               </div>
               <TextInput
                 name="designation"
-                defaultValue="Assistant"
                 placeholder="Your Designation"
                 type="text"
                 required
@@ -187,7 +186,6 @@ const Register = () => {
               </div>
               <TextInput
                 name="bank_account_no"
-                defaultValue="1234567891011"
                 placeholder="1DAXXXXXXXXXX"
                 type="text"
                 required
@@ -199,7 +197,6 @@ const Register = () => {
               </div>
               <TextInput
                 name="salary"
-                defaultValue={10000}
                 placeholder="Your Salary"
                 type="number"
                 required
@@ -212,6 +209,7 @@ const Register = () => {
               label={roles ? roles : "Your Role"}
               defaultValue={roles}
               className="text-white"
+              required
             >
               <Dropdown.Item onClick={() => handleRoles("Employee")}>
                 Employee
@@ -236,7 +234,7 @@ const Register = () => {
             />
           </div>
 
-          <Button className="bg-primaryColor" type="submit">
+          <Button className="bg-primaryColor" type="submit" disabled={!roles}>
             Submit
           </Button>
         </form>
