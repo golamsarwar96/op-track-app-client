@@ -24,6 +24,7 @@ const Navbar = () => {
           {user && user?.email ? (
             <div className="relative inline-block">
               <img
+                referrerPolicy="no-referrer"
                 src={user?.photoURL}
                 title={user?.displayName}
                 onClick={toggleDropdown}

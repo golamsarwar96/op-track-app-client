@@ -90,6 +90,13 @@ const Register = () => {
         name: result.user?.displayName,
         email: result.user?.email,
         image: result.user?.photoURL,
+        //adding default values for google logins
+        bank_account_no: "12345678910",
+        salary: 250,
+        designation: "Employee",
+        role: "Employee",
+        isVerified: false,
+        isFired: false,
       });
       toast.success("Google Login Successful");
       navigate("/");
