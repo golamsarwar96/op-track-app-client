@@ -181,7 +181,11 @@ const AllEmployeeList = () => {
                   </div>
                   <div className="flex justify-between">
                     <div>
-                      <AdjustSalary employee={employee}></AdjustSalary>
+                      <AdjustSalary
+                        refetch={refetch}
+                        salary={employee?.salary}
+                        employee={employee}
+                      ></AdjustSalary>
                     </div>
                     <div className="flex gap-2 items-center">
                       <div>

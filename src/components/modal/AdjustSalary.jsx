@@ -3,8 +3,8 @@ import { FaEdit } from "react-icons/fa";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 
-const AdjustSalary = ({ employee }) => {
-  const { _id } = employee || {};
+const AdjustSalary = ({ employee, refetch }) => {
+  const { _id, salary } = employee || {};
   const axiosSecure = useAxiosSecure();
   const [isOpen, setIsOpen] = useState(false); // Modal visibility state
 
@@ -14,24 +14,29 @@ const AdjustSalary = ({ employee }) => {
   // Close modal handler
   const closeModal = () => setIsOpen(false);
 
-  const handleSubmit = async (e, id) => {
+  const handleSubmit = async (e, id, salary) => {
     e.preventDefault();
     const form = e.target;
-    const salary = form.salary.value;
-    console.log(id, salary);
+    const updated_Salary = form.updated_Salary.value;
+    console.log(id, updated_Salary, salary);
 
-    try {
-      const updatedData = { updatedSalary: salary };
-      console.log(updatedData);
-      const { data } = await axiosSecure.patch(
-        `/users/salary/${id}`,
-        updatedData
-      );
-      console.log(data);
-      toast.success("Salary Updated Successfully");
-      refetch();
-    } catch (err) {
-      console.log(err);
+    if (updated_Salary > salary) {
+      try {
+        const updatedData = { updatedSalary: updated_Salary };
+        console.log(updatedData, salary);
+        const { data } = await axiosSecure.patch(
+          `/users/salary/${id}`,
+          updatedData
+        );
+        console.log(data);
+        toast.success("Salary Updated Successfully");
+        closeModal();
+        refetch();
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      toast.error("You can't decrease the current salary");
     }
   };
 
@@ -65,7 +70,7 @@ const AdjustSalary = ({ employee }) => {
 
               {/* Form Section */}
               <form
-                onSubmit={(e) => handleSubmit(e, _id)}
+                onSubmit={(e) => handleSubmit(e, _id, salary)}
                 className="space-y-4"
               >
                 <div>
@@ -75,7 +80,7 @@ const AdjustSalary = ({ employee }) => {
                   <input
                     type="number"
                     className="w-full p-2 border rounded-lg"
-                    name="salary"
+                    name="updated_Salary"
                     required
                   />
                 </div>
