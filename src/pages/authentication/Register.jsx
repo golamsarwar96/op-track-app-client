@@ -36,13 +36,13 @@ const Register = () => {
     formData.append("image", image);
 
     //Password Validation
-    // const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
-    // if (!regex.test(password)) {
-    //   toast.error(
-    //     "The password must be 6 characters & should contain at least one uppercase letter and one lowercase letter."
-    //   );
-    //   return;
-    // }
+    const regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
+    if (!regex.test(password)) {
+      toast.error(
+        "The password must be 6 characters & should contain at least one uppercase letter and one lowercase letter."
+      );
+      return;
+    }
 
     //Send Image Data to imgbb
     const { data } = await axios.post(
