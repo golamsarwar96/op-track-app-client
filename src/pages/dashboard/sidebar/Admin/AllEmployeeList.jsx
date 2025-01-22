@@ -44,7 +44,7 @@ const AllEmployeeList = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure
-          .put(`/users/${id}`, updatedData)
+          .put(`/users/fire/${id}`, updatedData)
           .then(() => {
             Swal.fire("Fired!", "success");
             refetch();

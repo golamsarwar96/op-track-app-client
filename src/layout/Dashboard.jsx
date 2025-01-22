@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <div className="max-w-screen-2xl mx-auto font-sand flex gap-10 bg-gray-50">
+    <div className="max-w-screen-2xl mx-auto font-sand flex gap-10 ">
       <Helmet>
         <title>OpTrack | Dashboard</title>
       </Helmet>

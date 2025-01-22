@@ -28,11 +28,11 @@ const Navbar = () => {
                 src={user?.photoURL}
                 title={user?.displayName}
                 onClick={toggleDropdown}
-                className="w-10 h-10 cursor-pointer rounded-full"
+                className="w-10 h-10 cursor-pointer rounded-full object-cover"
                 alt=""
               />
               {visible && (
-                <div className="absolute -right-3 top-[42px] bg-darkMode mt-2 w-20 px-4 py-2 text-center z-10">
+                <div className="absolute -right-3 top-[42px] bg-darkMode text-white mt-2 w-20 px-4 py-2 text-center z-10">
                   <button onClick={logOut} className="block">
                     Logout
                   </button>

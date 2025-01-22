@@ -44,8 +44,8 @@ const EmployeeList = () => {
               <Table.HeadCell>Email</Table.HeadCell>
               <Table.HeadCell>Bank Account</Table.HeadCell>
               <Table.HeadCell>Salary</Table.HeadCell>
-              <Table.HeadCell>Pay</Table.HeadCell>
               <Table.HeadCell>Verified</Table.HeadCell>
+              <Table.HeadCell>Pay</Table.HeadCell>
               <Table.HeadCell>Action</Table.HeadCell>
             </Table.Head>
             <Table.Body className="divide-y">
@@ -97,7 +97,7 @@ const EmployeeList = () => {
                     </button>
                   </Table.Cell>
                   <Table.Cell>
-                    <Link to={`/dashboard/details/${user._id}`}>
+                    <Link to={`/dashboard/details/${user?._id}`}>
                       <IoIosSearch className="text-2xl text-primaryColor" />
                     </Link>
                   </Table.Cell>

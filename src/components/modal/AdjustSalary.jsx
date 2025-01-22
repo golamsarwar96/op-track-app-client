@@ -14,18 +14,18 @@ const AdjustSalary = ({ employee, refetch }) => {
   // Close modal handler
   const closeModal = () => setIsOpen(false);
 
-  const handleSubmit = async (e, id, salary) => {
+  const handleSubmit = async (e, _id, salary) => {
     e.preventDefault();
     const form = e.target;
     const updated_Salary = form.updated_Salary.value;
-    console.log(id, updated_Salary, salary);
+    console.log(_id, updated_Salary, salary);
 
     if (updated_Salary > salary) {
       try {
         const updatedData = { updatedSalary: updated_Salary };
         console.log(updatedData, salary);
         const { data } = await axiosSecure.patch(
-          `/users/salary/${id}`,
+          `/users/salary/${_id}`,
           updatedData
         );
         console.log(data);

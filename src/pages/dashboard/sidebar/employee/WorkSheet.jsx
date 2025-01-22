@@ -86,7 +86,7 @@ const WorkSheet = () => {
         Work <span className="text-darkMode">Sheet</span>
       </h1>
       {/* Task Menu */}
-      <div className="mt-10 flex justify-center  gap-10">
+      <div className="mt-10 flex justify-center lg:gap-10">
         <form
           onSubmit={handleWorkSheet}
           className="flex justify-center items-center gap-20"
@@ -153,7 +153,7 @@ const WorkSheet = () => {
                   <Table.Cell>{workSheet.postedDate}</Table.Cell>
                   <Table.Cell>
                     <button onClick={() => handleDelete(workSheet._id)}>
-                      <AiOutlineDelete className="text-xl" />
+                      <AiOutlineDelete className="text-2xl text-red-700" />
                     </button>
                   </Table.Cell>
                   <Table.Cell>
