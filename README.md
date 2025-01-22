@@ -85,3 +85,8 @@
 ## LIVE LINK: 🌐
 
 https://op-track.web.app/
+
+## Credentials :
+
+- Email: admin@optrack.com
+- Password: Asdf123
