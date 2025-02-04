@@ -17,7 +17,6 @@ OpTrack is a powerful web application designed to streamline employee management
 - [Live Demo](#live-demo)
 - [Credentials](#credentials)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
