@@ -74,4 +74,24 @@ OpTrack is a powerful web application designed to streamline employee management
 ### **1. Clone the Repository**
 ```bash
 git clone https://github.com/golamsarwar96/op-track-app-client.git
+cd op-track-app-client <br/>
+
+### **1. Clone the Repository**  
+```bash
+git clone https://github.com/golamsarwar96/op-track-app-client.git  
 cd op-track-app-client
+
+2. Install Dependencies
+```bash
+npm install  
+3. Environment Configuration
+Create a .env file in the project root and add the following environment variables:
+
+```bash
+REACT_APP_API_URL=<Your API URL>  
+REACT_APP_STRIPE_KEY=<Your Stripe API Key>  
+REACT_APP_FIREBASE_API_KEY=<Your Firebase API Key>  
+
+4. Run the Project
+```bash
+npm run dev  
