@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://i.ibb.co.com/HhnbJL0/Screenshot-2025-01-22-180945.png"  />
+  <img src="https://i.ibb.co.com/93GyKRPF/optrackss.png"  />
 </div>
 
 # Project Name : OpTrack 🧑‍🚀
@@ -55,9 +55,9 @@
 • sweetalert2 : "^11.14.5", <br/>
 • swiper : "^11.2.0" <br/>
 
-<!-- ## Run On Your Machine -->
+## Run On Your Machine
 
-<!-- 1. Clone Repository
+1. Clone Repository
    • Click on the green "Code" button. <br/>
    • Copy the HTTPS URL. <br/>
    • Open your terminal or command prompt and navigate to the directory where you want to clone the project. <br/>
@@ -80,7 +80,7 @@
 3. Run The Project <br/>
    • Run the command <br/>
 
-   npm run dev <br/> -->
+   npm run dev <br/>
 
 ## LIVE LINK: 🌐
 
