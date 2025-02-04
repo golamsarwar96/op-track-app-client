@@ -1,47 +1,62 @@
 <div align="center">
-  <img src="https://i.ibb.co.com/93GyKRPF/optrackss.png"  />
+  <img src="https://i.ibb.co.com/93GyKRPF/optrackss.png" />
 </div>
 
-# Project Name : OpTrack 🧑‍🚀
+# OpTrack 🧑‍🚀
 
-"OpTrack" is a web application designed to streamline employee management in an organization. It supports role-based functionalities for Admins, HRs, and Employees, providing a tailored experience based on their responsibilities. The platform offers task submissions, salary management, payment handling via Stripe, performance tracking, and much more. This application is built with modern web technologies, ensuring a seamless, responsive, and efficient user experience.
+**OpTrack** is a web application designed to streamline employee management in an organization. It supports role-based functionalities for Admins, HRs, and Employees, providing a tailored experience based on their responsibilities. The platform offers task submissions, salary management, payment handling via Stripe, performance tracking, and much more. This application is built with modern web technologies, ensuring a seamless, responsive, and efficient user experience.
 
-## Key Features Of Next Step 🎯
+## Table of Contents
 
-## Features
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Running the Project](#running-the-project)
+- [Live Demo](#live-demo)
+- [Environment Variables](#environment-variables)
+- [Credentials](#credentials)
+- [License](#license)
 
-## Admin Features:
+---
 
-• View all employees. <br/>
-• Adjust employee salaries. <br/>
-• Terminate employees.<br/>
-• Promote an employee to HR.<br/>
-• Make payments using Stripe.<br/>
+## Key Features 🎯
 
-## HR Features:
+### Admin Features:
 
-• Access all user information. <br/>
-• Verify new users. <br/>
-• Request payments for employees. <br/>
-• Track salary trends with monthly charts. <br/>
-• View specific employee tasks and performance. <br/>
+✅ View all employees.  
+✅ Adjust employee salaries.  
+✅ Terminate employees.  
+✅ Promote an employee to HR.  
+✅ Make payments using Stripe.  
 
-## Employee Features:
+### HR Features:
 
-• Submit tasks. <br/>
-• Browse payment history. <br/>
+✅ Access all user information.  
+✅ Verify new users.  
+✅ Request payments for employees.  
+✅ Track salary trends with monthly charts.  
+✅ View specific employee tasks and performance.  
 
-## Technology used on Next Step 👨🏻‍💻
+### Employee Features:
 
-## Frontend:
+✅ Submit tasks.  
+✅ Browse payment history.  
 
-• React: For building a responsive and dynamic user interface. <br/>
-• React Router: For seamless navigation. <br/>
-• Tailwind CSS: For styling the application. <br/>
-• Rechart: For creating interactive charts. <br/>
-• Flowbite React: For pre-styled components. <br/>
-• Swiper: For smooth carousels and sliders. <br/>
-• TanStack Query and Axios : For efficient data fetching and caching. <br/>
+---
+
+## Technology Stack 👨🏻‍💻
+
+### **Frontend:**
+
+- **React**: For building a responsive and dynamic user interface.  
+- **React Router**: For seamless navigation.  
+- **Tailwind CSS**: For styling the application.  
+- **Rechart**: For creating interactive charts.  
+- **Flowbite React**: For pre-styled components.  
+- **Swiper**: For smooth carousels and sliders.  
+- **TanStack Query & Axios**: For efficient data fetching and caching.  
+
 
 ## Dependencies
 
@@ -55,38 +70,15 @@
 • sweetalert2 : "^11.14.5", <br/>
 • swiper : "^11.2.0" <br/>
 
-## Run On Your Machine
 
-1. Clone Repository
-   • Click on the green "Code" button. <br/>
-   • Copy the HTTPS URL. <br/>
-   • Open your terminal or command prompt and navigate to the directory where you want to clone the project. <br/>
+---
 
-   git clone https://github.com/golamsarwar96/op-track-app-client.git <br/>
+## Installation
 
-   • Navigate into the project folder: <br/>
+### Clone Repository
 
-   cd project-name <br/>
+git clone https://github.com/golamsarwar96/op-track-app-client.git
 
-2. Install Dependencies <br/>
-   • Check package.json <br/>
-   • Run the command <br/>
+cd op-track-app-client
 
-   npm install <br/>
 
-   • Check Configuration Files: <br/>
-   Review environment files like .env for any necessary API keys or database credentials. <br/>
-
-3. Run The Project <br/>
-   • Run the command <br/>
-
-   npm run dev <br/>
-
-## LIVE LINK: 🌐
-
-https://op-track.web.app/
-
-## Credentials :
-
-- Email: admin@optrack.com
-- Password: Asdf123
