@@ -62,7 +62,7 @@
    • Copy the HTTPS URL. <br/>
    • Open your terminal or command prompt and navigate to the directory where you want to clone the project. <br/>
 
-   git clone https://github.com/golamsarwar96/sport-flex-app-client.git <br/>
+   git clone https://github.com/golamsarwar96/op-track-app-client.git <br/>
 
    • Navigate into the project folder: <br/>
 
