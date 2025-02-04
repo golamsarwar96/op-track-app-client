@@ -71,27 +71,42 @@ OpTrack is a powerful web application designed to streamline employee management
 
 ## Installation
 
-### **1. Clone the Repository**
-```bash
-git clone https://github.com/golamsarwar96/op-track-app-client.git
-cd op-track-app-client <br/>
-
 ### **1. Clone the Repository**  
-```bash
-git clone https://github.com/golamsarwar96/op-track-app-client.git  
-cd op-track-app-client
+```sh
+git clone https://github.com/golamsarwar96/op-track-app-client.git
+```
+### **2. Install Dependencies**
 
-2. Install Dependencies
-```bash
-npm install  
-3. Environment Configuration
-Create a .env file in the project root and add the following environment variables:
+```sh
+npm install
+```
+### **3. Environment Configuration**
+Create a .env file in the project root and add the following environment variables <br/>
 
-```bash
-REACT_APP_API_URL=<Your API URL>  
-REACT_APP_STRIPE_KEY=<Your Stripe API Key>  
-REACT_APP_FIREBASE_API_KEY=<Your Firebase API Key>  
+```sh
+REACT_APP_API_URL=<Your API URL>
+REACT_APP_STRIPE_KEY=<Your Stripe API Key>
+REACT_APP_FIREBASE_API_KEY=<Your Firebase API Key>
+```
 
-4. Run the Project
-```bash
-npm run dev  
+### **4. Run the Project**
+```sh
+npm run dev
+```
+
+##Usage <br/>
+Visit the application at the development server URL displayed in the terminal upon running the project. <br/>
+
+##Live Link 🌐
+https://op-track.web.app/ <br/>
+
+
+##Credentials
+To test the application, use the following credentials: <br/>
+
+Email: admin@optrack.com <br/>
+Password: Asdf123 <br/>
+
+##Contributing
+Contributions are welcome! Please fork the repository, create a new branch for your feature or bug fix, and submit a pull request.
+
