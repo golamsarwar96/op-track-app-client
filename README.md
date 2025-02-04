@@ -94,19 +94,19 @@ REACT_APP_FIREBASE_API_KEY=<Your Firebase API Key>
 npm run dev
 ```
 
-##Usage <br/>
+## Usage <br/>
 Visit the application at the development server URL displayed in the terminal upon running the project. <br/>
 
-##Live Link 🌐
+## Live Link 🌐
 https://op-track.web.app/ <br/>
 
 
-##Credentials
+## Credentials
 To test the application, use the following credentials: <br/>
 
 Email: admin@optrack.com <br/>
 Password: Asdf123 <br/>
 
-##Contributing
+## Contributing
 Contributions are welcome! Please fork the repository, create a new branch for your feature or bug fix, and submit a pull request.
 
