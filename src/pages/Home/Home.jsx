@@ -6,7 +6,7 @@ import FreqAskedQues from "./FreqAskedQues";
 import { Helmet } from "react-helmet-async";
 const Home = () => {
   return (
-    <div>
+    <div className="mt-10">
       <Helmet>
         <title>OpTrack | Home</title>
       </Helmet>

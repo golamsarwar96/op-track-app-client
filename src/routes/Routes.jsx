@@ -15,6 +15,8 @@ import Payroll from "../pages/dashboard/sidebar/Admin/Payroll";
 import PrivateRoute from "../routes/PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import HrRoute from "./HrRoute";
+import Career from "../pages/Career";
+import AboutUs from "../pages/AboutUs";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -114,6 +116,14 @@ const router = createBrowserRouter([
   {
     path: "contact",
     element: <Contact></Contact>,
+  },
+  {
+    path: "career",
+    element: <Career></Career>,
+  },
+  {
+    path: "about-us",
+    element: <AboutUs></AboutUs>,
   },
 ]);
 
