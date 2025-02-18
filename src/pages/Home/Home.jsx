@@ -4,6 +4,8 @@ import Services from "./Services";
 import Testimonial from "./Testimonial";
 import FreqAskedQues from "./FreqAskedQues";
 import { Helmet } from "react-helmet-async";
+import AppSection from "./AppSection";
+import Newsletter from "./Newsletter";
 const Home = () => {
   return (
     <div className="mt-10">
@@ -24,6 +26,12 @@ const Home = () => {
       </section>
       <section>
         <FreqAskedQues></FreqAskedQues>
+      </section>
+      <section>
+        <AppSection></AppSection>
+      </section>
+      <section>
+        <Newsletter></Newsletter>
       </section>
     </div>
   );

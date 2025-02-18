@@ -20,7 +20,7 @@ const FreqAskedQues = () => {
           autoplay={true}
         ></Lottie>
       </div>
-      <div className="bg-primaryColor/80 flex-1 w-full rounded-lg p-5 -mt-24 lg:order-1 z-10">
+      <div className="bg-primaryColor flex-1 w-full rounded-lg p-5 -mt-24 lg:order-1 z-10">
         <Accordion collapseAll>
           <Accordion.Panel>
             <Accordion.Title className="text-highlightColor">
