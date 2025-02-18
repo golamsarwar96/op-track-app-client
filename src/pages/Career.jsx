@@ -3,7 +3,7 @@ import jobBanner from "../assets/images/jobBanner.png";
 import { Link } from "react-router-dom";
 const Career = () => {
   return (
-    <div className="flex lg:flex-row flex-col justify-center items-center gap-5 bg-primaryColor/10 h-screen font-sand">
+    <div className="flex lg:flex-row flex-col justify-center items-center gap-5 bg-bgColor h-screen font-sand">
       <div className="space-y-4">
         <h1 className="text-5xl font-bold w-[70%] mx-auto">
           <span className="bg-primaryColor text-darkMode px-2">Join</span> Our
