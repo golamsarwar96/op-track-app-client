@@ -9,7 +9,7 @@ const AboutUs = () => {
           <FaHome></FaHome>
         </button>
       </Link>
-      <p className="text-primaryColor bg-darkMode px-8 py-4 font-sand font-semibold w-[50%] hover:bg-primaryColor hover:text-darkMode mx-auto text-center">
+      <p className="text-primaryColor bg-darkMode px-8 py-4 font-sand font-semibold lg:w-[50%] hover:bg-primaryColor hover:text-darkMode mx-auto text-center">
         OpTrack is a comprehensive web application built to simplify and
         optimize employee management for organizations. Our platform offers
         role-based functionalities for Admins, HRs, and Employees, ensuring a

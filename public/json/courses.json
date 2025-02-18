@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co.com/tTjkWr41/training1.png",
+    "title": "Advanced Project Management",
+    "topic": "Project Management",
+    "course_duration": "8 weeks"
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co.com/GvFVLSDr/training2.png",
+    "title": "Mastering Leadership Skills",
+    "topic": "Leadership & Management",
+    "course_duration": "6 weeks"
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co.com/tpzbnmzw/training3.png",
+    "title": "Data Science for Beginners",
+    "topic": "Data Science",
+    "course_duration": "12 weeks"
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co.com/0psJ34nY/training4.png",
+    "title": "Effective Communication",
+    "topic": "Communication",
+    "course_duration": "4 weeks"
+  }
+]

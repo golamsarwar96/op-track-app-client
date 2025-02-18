@@ -6,6 +6,7 @@ import FreqAskedQues from "./FreqAskedQues";
 import { Helmet } from "react-helmet-async";
 import AppSection from "./AppSection";
 import Newsletter from "./Newsletter";
+import Training from "./Training";
 const Home = () => {
   return (
     <div className="mt-10">
@@ -23,6 +24,9 @@ const Home = () => {
       </section>
       <section>
         <PricePlans></PricePlans>
+      </section>
+      <section>
+        <Training></Training>
       </section>
       <section>
         <FreqAskedQues></FreqAskedQues>
