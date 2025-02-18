@@ -1,92 +1,111 @@
 <div align="center">
-  <img src="https://i.ibb.co.com/HhnbJL0/Screenshot-2025-01-22-180945.png"  />
+  <img src="https://i.ibb.co.com/93GyKRPF/optrackss.png" alt="OpTrack Logo" />
 </div>
 
-# Project Name : OpTrack 🧑‍🚀
+# OpTrack 🧑‍🚀  
 
-"OpTrack" is a web application designed to streamline employee management in an organization. It supports role-based functionalities for Admins, HRs, and Employees, providing a tailored experience based on their responsibilities. The platform offers task submissions, salary management, payment handling via Stripe, performance tracking, and much more. This application is built with modern web technologies, ensuring a seamless, responsive, and efficient user experience.
+OpTrack is a powerful web application designed to streamline employee management within organizations. The platform supports role-based functionalities for Admins, HRs, and Employees, offering tailored experiences to meet their responsibilities. With features like task submissions, salary management, payment handling via Stripe, and performance tracking, OpTrack provides a seamless and efficient solution for organizational operations.
 
-## Key Features Of Next Step 🎯
+---
 
-## Features
+## Table of Contents
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Live Demo](#live-demo)
+- [Credentials](#credentials)
+- [Contributing](#contributing)
 
-## Admin Features:
+---
 
-• View all employees. <br/>
-• Adjust employee salaries. <br/>
-• Terminate employees.<br/>
-• Promote an employee to HR.<br/>
-• Make payments using Stripe.<br/>
+## Key Features 🎯
 
-## HR Features:
+### **Admin Features:**
+- View all employees.
+- Adjust employee salaries.
+- Terminate employees.
+- Promote employees to HR.
+- Make payments via Stripe.
 
-• Access all user information. <br/>
-• Verify new users. <br/>
-• Request payments for employees. <br/>
-• Track salary trends with monthly charts. <br/>
-• View specific employee tasks and performance. <br/>
+### **HR Features:**
+- Access all user information.
+- Verify new users.
+- Request payments for employees.
+- Track salary trends with monthly charts.
+- View specific employee tasks and performance.
 
-## Employee Features:
+### **Employee Features:**
+- Submit tasks.
+- Browse payment history.
 
-• Submit tasks. <br/>
-• Browse payment history. <br/>
+---
 
-## Technology used on Next Step 👨🏻‍💻
+## Technology Stack 👨🏻‍💻
 
-## Frontend:
+### **Frontend**
+- **React**: For building a responsive and dynamic user interface.  
+- **React Router**: For seamless navigation.  
+- **Tailwind CSS**: For styling the application.  
+- **Recharts**: For creating interactive charts.  
+- **Flowbite React**: Pre-styled components.  
+- **Swiper**: Smooth carousels and sliders.  
+- **TanStack Query and Axios**: Efficient data fetching and caching.  
 
-• React: For building a responsive and dynamic user interface. <br/>
-• React Router: For seamless navigation. <br/>
-• Tailwind CSS: For styling the application. <br/>
-• Rechart: For creating interactive charts. <br/>
-• Flowbite React: For pre-styled components. <br/>
-• Swiper: For smooth carousels and sliders. <br/>
-• TanStack Query and Axios : For efficient data fetching and caching. <br/>
+---
 
 ## Dependencies
+- **@emailjs/browser**: "^4.4.1"  
+- **lottie-react**: "^2.4.0"  
+- **react-helmet**: "^6.1.0"  
+- **react-hot-toast**: "^2.4.1"  
+- **react-icons**: "^5.4.0"  
+- **react-router-dom**: "^7.0.2"  
+- **react-tooltip**: "^5.28.0"  
+- **sweetalert2**: "^11.14.5"  
+- **swiper**: "^11.2.0"  
 
-• @emailjs/browser : "^4.4.1", <br/>
-• lottie-react : "^2.4.0", <br/>
-• react-helmet : "^6.1.0", <br/>
-• react-hot-toast : "^2.4.1", <br/>
-• react-icons : "^5.4.0", <br/>
-• react-router-dom : "^7.0.2", <br/>
-• react-tooltip : "^5.28.0", <br/>
-• sweetalert2 : "^11.14.5", <br/>
-• swiper : "^11.2.0" <br/>
+---
 
-<!-- ## Run On Your Machine -->
+## Installation
 
-<!-- 1. Clone Repository
-   • Click on the green "Code" button. <br/>
-   • Copy the HTTPS URL. <br/>
-   • Open your terminal or command prompt and navigate to the directory where you want to clone the project. <br/>
+### **1. Clone the Repository**  
+```sh
+git clone https://github.com/golamsarwar96/op-track-app-client.git
+```
+### **2. Install Dependencies**
 
-   git clone https://github.com/golamsarwar96/sport-flex-app-client.git <br/>
+```sh
+npm install
+```
+### **3. Environment Configuration**
+Create a .env file in the project root and add the following environment variables <br/>
 
-   • Navigate into the project folder: <br/>
+```sh
+REACT_APP_API_URL=<Your API URL>
+REACT_APP_STRIPE_KEY=<Your Stripe API Key>
+REACT_APP_FIREBASE_API_KEY=<Your Firebase API Key>
+```
 
-   cd project-name <br/>
+### **4. Run the Project**
+```sh
+npm run dev
+```
 
-2. Install Dependencies <br/>
-   • Check package.json <br/>
-   • Run the command <br/>
+## Usage <br/>
+Visit the application at the development server URL displayed in the terminal upon running the project. <br/>
 
-   npm install <br/>
+## Live Link 🌐
+https://op-track.web.app/ <br/>
 
-   • Check Configuration Files: <br/>
-   Review environment files like .env for any necessary API keys or database credentials. <br/>
 
-3. Run The Project <br/>
-   • Run the command <br/>
+## Credentials
+To test the application, use the following credentials: <br/>
 
-   npm run dev <br/> -->
+Email: admin@optrack.com <br/>
+Password: Asdf123 <br/>
 
-## LIVE LINK: 🌐
+## Contributing
+Contributions are welcome! Please fork the repository, create a new branch for your feature or bug fix, and submit a pull request.
 
-https://op-track.web.app/
-
-## Credentials :
-
-- Email: admin@optrack.com
-- Password: Asdf123
