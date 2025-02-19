@@ -18,6 +18,7 @@ import HrRoute from "./HrRoute";
 import Career from "../pages/Career";
 import AboutUs from "../pages/AboutUs";
 import Profile from "../pages/dashboard/Profile";
+import Overview from "../pages/dashboard/Overview";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -117,6 +118,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Profile></Profile>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "overview",
+        element: (
+          <PrivateRoute>
+            <Overview></Overview>
           </PrivateRoute>
         ),
       },

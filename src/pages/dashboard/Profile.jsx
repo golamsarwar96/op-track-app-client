@@ -1,15 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
+import Loading from "../shared/Loading";
 
 const Profile = () => {
   const { user } = useAuth();
-  console.log("User Email:", user?.email);
-
-  // Get axios instance from custom hook
   const axiosSecure = useAxiosSecure();
-
-  // Fetch users using React Query & axiosSecure
   const {
     data: users = [],
     isLoading,
@@ -18,7 +14,7 @@ const Profile = () => {
   } = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
-      const response = await axiosSecure.get("/users"); // Use axios instance properly
+      const response = await axiosSecure.get("/users");
       console.log("Fetched Users:", response.data);
       return response.data;
     },
@@ -27,8 +23,7 @@ const Profile = () => {
   const singleUser = users.find((oneUser) => oneUser?.email === user?.email);
   console.log(singleUser);
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (isLoading) return <Loading></Loading>;
 
   return (
     <div>
@@ -41,8 +36,8 @@ const Profile = () => {
           className="w-[150px] h-[150px] rounded-full"
           src={
             singleUser?.role === "Employee"
-              ? singleUser.image
-              : singleUser.img_URL
+              ? singleUser?.image
+              : singleUser?.img_URL
           }
         />
         <h1 className="text-darkMode font-bold text-xl mt-3">
