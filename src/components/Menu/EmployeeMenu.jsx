@@ -40,7 +40,7 @@ const EmployeeMenu = () => {
             ? "bg-darkMode px-5 py-2 md:rounded-3xl w-full text-center text-white"
             : "text-white"
         }
-        to="overview"
+        to="employeeOverview"
       >
         Overview
       </NavLink>

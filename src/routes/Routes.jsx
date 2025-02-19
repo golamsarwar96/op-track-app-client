@@ -13,12 +13,14 @@ import Progress from "../pages/dashboard/sidebar/hr/Progress";
 import AllEmployeeList from "../pages/dashboard/sidebar/Admin/AllEmployeeList";
 import Payroll from "../pages/dashboard/sidebar/Admin/Payroll";
 import PrivateRoute from "../routes/PrivateRoute";
+import EmployeeOverview from "../pages/dashboard/EmployeeOverview";
 import AdminRoute from "./AdminRoute";
 import HrRoute from "./HrRoute";
 import Career from "../pages/Career";
 import AboutUs from "../pages/AboutUs";
 import Profile from "../pages/dashboard/Profile";
 import Overview from "../pages/dashboard/Overview";
+import HrOverview from "../pages/dashboard/HrOverview";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -126,6 +128,22 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Overview></Overview>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "employeeOverview",
+        element: (
+          <PrivateRoute>
+            <EmployeeOverview></EmployeeOverview>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "HrOverview",
+        element: (
+          <PrivateRoute>
+            <HrOverview></HrOverview>
           </PrivateRoute>
         ),
       },
