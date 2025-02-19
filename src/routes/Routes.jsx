@@ -17,6 +17,7 @@ import AdminRoute from "./AdminRoute";
 import HrRoute from "./HrRoute";
 import Career from "../pages/Career";
 import AboutUs from "../pages/AboutUs";
+import Profile from "../pages/dashboard/Profile";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -108,6 +109,14 @@ const router = createBrowserRouter([
             <AdminRoute>
               <Payroll></Payroll>
             </AdminRoute>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "profile",
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
           </PrivateRoute>
         ),
       },

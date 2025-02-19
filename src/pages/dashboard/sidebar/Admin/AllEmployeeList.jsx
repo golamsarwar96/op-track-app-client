@@ -8,7 +8,6 @@ import toast from "react-hot-toast";
 import AdjustSalary from "../../../../components/modal/AdjustSalary";
 import { TbColumns3, TbTable } from "react-icons/tb";
 import { useState } from "react";
-import CardView from "../../../../components/CardView";
 
 const AllEmployeeList = () => {
   const axiosSecure = useAxiosSecure();

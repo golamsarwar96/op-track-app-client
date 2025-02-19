@@ -4,6 +4,7 @@ import EmployeeMenu from "../../../components/Menu/EmployeeMenu";
 import HrMenu from "../../../components/Menu/HrMenu";
 import AdminMenu from "../../../components/Menu/AdminMenu";
 import useRole from "../../../hooks/useRole";
+import Profile from "../Profile";
 
 const Sidebar = () => {
   const [role, isLoading] = useRole();
